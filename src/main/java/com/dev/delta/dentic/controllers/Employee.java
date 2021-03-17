@@ -1,4 +1,4 @@
-package com.dev.delta.stockbay.entities;
+package com.dev.delta.dentic.controllers;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

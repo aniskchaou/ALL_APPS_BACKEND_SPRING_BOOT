@@ -1,5 +1,5 @@
 package com.dev.delta.managem.controllers;
 
-public class DashBoardController {
+public class NoteController {
 
 }
