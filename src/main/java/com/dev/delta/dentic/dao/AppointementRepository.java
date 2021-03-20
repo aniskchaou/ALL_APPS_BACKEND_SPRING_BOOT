@@ -1,5 +1,12 @@
 package com.dev.delta.dentic.dao;
 
-public interface AppointementRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import com.dev.delta.dentic.entities.Appointement;
+
+
+@RepositoryRestResource
+public interface AppointementRepository extends JpaRepository<Appointement, Long>{
 
 }

@@ -1,5 +1,11 @@
 package com.dev.delta.dentic.dao;
 
-public interface PatientRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import com.dev.delta.accountt.entities.Product;
+import com.dev.delta.dentic.entities.Patient;
+@RepositoryRestResource
+public interface PatientRepository extends JpaRepository<Patient, Long> {
 
 }

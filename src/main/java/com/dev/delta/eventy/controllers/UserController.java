@@ -1,4 +1,4 @@
-package com.dev.delta.accountt.controllers;
+package com.dev.delta.eventy.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,19 +18,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.delta.accountt.entities.Tax;
-import com.dev.delta.accountt.services.TaxService;
-
+import com.dev.delta.accountt.entities.Account;
+import com.dev.delta.accountt.services.AccountService;
 @RestController
-@RequestMapping("/tax")
+@RequestMapping("/user")
 @CrossOrigin
-public class TaxController {
+public class UserController {
 	@Autowired
-	TaxService taxService;
+	AccountService accountService;
 	
 	
 	@PostMapping("/create")
-	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Tax projectTax, BindingResult result){
+	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Account projectAccount, BindingResult result){
 
 	    if(result.hasErrors()){
 	            Map<String, String> errorMap = new HashMap<String,String>();
@@ -41,30 +40,30 @@ public class TaxController {
 	            return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
 	        }
           
-	        Tax newPT = taxService.saveOrUpdate(projectTax);
+	        Account newPT = accountService.saveOrUpdate(projectAccount);
 
-	        return new ResponseEntity<Tax>(newPT, HttpStatus.CREATED);
+	        return new ResponseEntity<Account>(newPT, HttpStatus.CREATED);
 	    }
 	
 	
 	
    @GetMapping("/all")
-   public Iterable<Tax> getAllTaxs()
+   public Iterable<Account> getAllAccounts()
    {
-	   return taxService.findAll();
+	   return accountService.findAll();
    }
    
    @GetMapping("/{id}")
-   public ResponseEntity<Tax> getTaxById(@PathVariable Long id)
+   public ResponseEntity<Account> getAccountById(@PathVariable Long id)
    {
-	   Tax tax=taxService.findById(id);
-	   return new ResponseEntity<Tax>(tax,HttpStatus.OK);
+	   Account account=accountService.findById(id);
+	   return new ResponseEntity<Account>(account,HttpStatus.OK);
    }
    
    @DeleteMapping("/delete/{id}")
-   public ResponseEntity<String> deleteTax(@PathVariable Long id)
+   public ResponseEntity<String> deleteAccount(@PathVariable Long id)
    {
-	   taxService.delete(id);
-	   return new ResponseEntity<String>("tax was deleted",HttpStatus.OK);
+	   accountService.delete(id);
+	   return new ResponseEntity<String>("account was deleted",HttpStatus.OK);
    }
 }

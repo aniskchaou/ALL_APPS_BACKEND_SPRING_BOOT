@@ -20,9 +20,9 @@ public class Medicament {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Medicament(Long id, String medicine_name, String company_name, String group_name, String description) {
+	public Medicament( String medicine_name, String company_name, String group_name, String description) {
 		super();
-		this.id = id;
+		
 		this.medicine_name = medicine_name;
 		this.company_name = company_name;
 		this.group_name = group_name;

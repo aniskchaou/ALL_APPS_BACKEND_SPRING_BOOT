@@ -1,5 +1,35 @@
 package com.dev.delta.dentic.services;
 
-public class AppointementService {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.dev.delta.dentic.dao.AppointementRepository;
+import com.dev.delta.dentic.entities.Appointement;
+
+@Service
+public class AppointementService {
+	@Autowired
+	AppointementRepository  appointementRepository;
+	
+	public Appointement saveOrUpdate(Appointement appointement)
+	{
+		
+		return appointementRepository.save(appointement);
+	}
+	
+	public Iterable<Appointement> findAll()
+	{
+		return appointementRepository.findAll();
+	}
+	
+	public Appointement findById(Long id)
+	{
+		return appointementRepository.getOne(id);
+	}
+	
+	public void delete(Long id)
+	{
+		Appointement appointement=findById(id);
+		appointementRepository.delete(appointement);
+	}
 }

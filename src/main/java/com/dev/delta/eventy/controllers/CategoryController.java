@@ -1,4 +1,4 @@
-package com.dev.delta.accountt.controllers;
+package com.dev.delta.eventy.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,19 +18,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.delta.accountt.entities.Tax;
-import com.dev.delta.accountt.services.TaxService;
+import com.dev.delta.eventy.entities.Category;
+import com.dev.delta.eventy.services.CategoryService;
 
 @RestController
-@RequestMapping("/tax")
+@RequestMapping("/category")
 @CrossOrigin
-public class TaxController {
+
+public class CategoryController {
 	@Autowired
-	TaxService taxService;
+	CategoryService categoryService;
 	
 	
 	@PostMapping("/create")
-	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Tax projectTax, BindingResult result){
+	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Category projectCategory, BindingResult result){
 
 	    if(result.hasErrors()){
 	            Map<String, String> errorMap = new HashMap<String,String>();
@@ -41,30 +42,30 @@ public class TaxController {
 	            return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
 	        }
           
-	        Tax newPT = taxService.saveOrUpdate(projectTax);
+	        Category newPT = categoryService.saveOrUpdate(projectCategory);
 
-	        return new ResponseEntity<Tax>(newPT, HttpStatus.CREATED);
+	        return new ResponseEntity<Category>(newPT, HttpStatus.CREATED);
 	    }
 	
 	
 	
    @GetMapping("/all")
-   public Iterable<Tax> getAllTaxs()
+   public Iterable<Category> getAllCategorys()
    {
-	   return taxService.findAll();
+	   return categoryService.findAll();
    }
    
    @GetMapping("/{id}")
-   public ResponseEntity<Tax> getTaxById(@PathVariable Long id)
+   public ResponseEntity<Category> getCategoryById(@PathVariable Long id)
    {
-	   Tax tax=taxService.findById(id);
-	   return new ResponseEntity<Tax>(tax,HttpStatus.OK);
+	   Category category=categoryService.findById(id);
+	   return new ResponseEntity<Category>(category,HttpStatus.OK);
    }
    
    @DeleteMapping("/delete/{id}")
-   public ResponseEntity<String> deleteTax(@PathVariable Long id)
+   public ResponseEntity<String> deleteCategory(@PathVariable Long id)
    {
-	   taxService.delete(id);
-	   return new ResponseEntity<String>("tax was deleted",HttpStatus.OK);
+	   categoryService.delete(id);
+	   return new ResponseEntity<String>("category was deleted",HttpStatus.OK);
    }
 }

@@ -8,6 +8,7 @@ import com.dev.delta.accountt.entities.Product;
 
 @Service
 public class ProductService {
+	
 	@Autowired
 	ProductRepository  productRepository;
 	
@@ -32,4 +33,6 @@ public class ProductService {
 		Product product=findById(id);
 		productRepository.delete(product);
 	}
+
+	
 }
