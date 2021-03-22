@@ -3,13 +3,13 @@ package com.dev.delta.dentic.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.dentic.dao.PatientRepository;
+import com.dev.delta.dentic.dao.PatientDenticRepository;
 import com.dev.delta.dentic.entities.Patient;
 
 @Service
 public class PatientService {
 	@Autowired
-	PatientRepository  patientRepository;
+	PatientDenticRepository  patientRepository;
 	
 	public Patient saveOrUpdate(Patient patient)
 	{

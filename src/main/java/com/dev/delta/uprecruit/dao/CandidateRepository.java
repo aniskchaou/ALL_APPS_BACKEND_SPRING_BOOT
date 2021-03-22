@@ -1,5 +1,11 @@
 package com.dev.delta.uprecruit.dao;
 
-public interface CandidateRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import com.dev.delta.fastbus.entities.Assign;
+import com.dev.delta.uprecruit.entities.Candidate;
+@RepositoryRestResource
+public interface CandidateRepository extends JpaRepository<Candidate, Long>  {
 
 }

@@ -3,14 +3,14 @@ package com.dev.delta.accountt.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.accountt.dao.ProductRepository;
+import com.dev.delta.accountt.dao.ProductAccountRepository;
 import com.dev.delta.accountt.entities.Product;
 
 @Service
 public class ProductService {
 	
 	@Autowired
-	ProductRepository  productRepository;
+	ProductAccountRepository  productRepository;
 	
 	public Product saveOrUpdate(Product product)
 	{

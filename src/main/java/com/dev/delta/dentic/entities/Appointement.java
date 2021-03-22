@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="appointement")
+@Table(name="dentic_appointement")
 public class Appointement {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)

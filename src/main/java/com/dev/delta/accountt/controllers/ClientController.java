@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.delta.accountt.entities.Client;
 import com.dev.delta.accountt.services.ClientService;
 @RestController
-@RequestMapping("/client")
+@RequestMapping("/accountt/client")
 @CrossOrigin
 public class ClientController {
 	@Autowired

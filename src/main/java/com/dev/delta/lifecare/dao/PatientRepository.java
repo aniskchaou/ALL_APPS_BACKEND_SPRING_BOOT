@@ -1,5 +1,11 @@
 package com.dev.delta.lifecare.dao;
 
-public interface PatientRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import com.dev.delta.fastbus.entities.Assign;
+import com.dev.delta.lifecare.entities.PatientHospital;
+@RepositoryRestResource
+public interface PatientRepository extends JpaRepository<PatientHospital, Long>  {
 
 }

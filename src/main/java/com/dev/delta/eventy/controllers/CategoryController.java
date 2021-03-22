@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.delta.eventy.entities.Category;
+import com.dev.delta.eventy.entities.CategoryEvent;
 import com.dev.delta.eventy.services.CategoryService;
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/eventy/category")
 @CrossOrigin
 
 public class CategoryController {
@@ -31,7 +31,7 @@ public class CategoryController {
 	
 	
 	@PostMapping("/create")
-	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Category projectCategory, BindingResult result){
+	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody CategoryEvent projectCategory, BindingResult result){
 
 	    if(result.hasErrors()){
 	            Map<String, String> errorMap = new HashMap<String,String>();
@@ -42,24 +42,24 @@ public class CategoryController {
 	            return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
 	        }
           
-	        Category newPT = categoryService.saveOrUpdate(projectCategory);
+	        CategoryEvent newPT = categoryService.saveOrUpdate(projectCategory);
 
-	        return new ResponseEntity<Category>(newPT, HttpStatus.CREATED);
+	        return new ResponseEntity<CategoryEvent>(newPT, HttpStatus.CREATED);
 	    }
 	
 	
 	
    @GetMapping("/all")
-   public Iterable<Category> getAllCategorys()
+   public Iterable<CategoryEvent> getAllCategorys()
    {
 	   return categoryService.findAll();
    }
    
    @GetMapping("/{id}")
-   public ResponseEntity<Category> getCategoryById(@PathVariable Long id)
+   public ResponseEntity<CategoryEvent> getCategoryById(@PathVariable Long id)
    {
-	   Category category=categoryService.findById(id);
-	   return new ResponseEntity<Category>(category,HttpStatus.OK);
+	   CategoryEvent category=categoryService.findById(id);
+	   return new ResponseEntity<CategoryEvent>(category,HttpStatus.OK);
    }
    
    @DeleteMapping("/delete/{id}")

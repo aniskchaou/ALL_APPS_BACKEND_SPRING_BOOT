@@ -1,9 +1,12 @@
 package com.dev.delta.managem.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="managem_my_task")
 public class MyTask {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;

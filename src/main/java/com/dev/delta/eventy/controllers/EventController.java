@@ -18,19 +18,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.delta.accountt.entities.Account;
-import com.dev.delta.accountt.services.AccountService;
+import com.dev.delta.eventy.entities.Event;
+import com.dev.delta.eventy.services.EventService;
+
+
 @RestController
-@RequestMapping("/event")
+@RequestMapping("/eventy/event")
 @CrossOrigin
 
 public class EventController {
 	@Autowired
-	AccountService accountService;
+	EventService eventService;
 	
 	
 	@PostMapping("/create")
-	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Account projectAccount, BindingResult result){
+	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Event projectEvent, BindingResult result){
 
 	    if(result.hasErrors()){
 	            Map<String, String> errorMap = new HashMap<String,String>();
@@ -41,30 +43,30 @@ public class EventController {
 	            return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
 	        }
           
-	        Account newPT = accountService.saveOrUpdate(projectAccount);
+	        Event newPT = eventService.saveOrUpdate(projectEvent);
 
-	        return new ResponseEntity<Account>(newPT, HttpStatus.CREATED);
+	        return new ResponseEntity<Event>(newPT, HttpStatus.CREATED);
 	    }
 	
 	
 	
    @GetMapping("/all")
-   public Iterable<Account> getAllAccounts()
+   public Iterable<Event> getAllEvents()
    {
-	   return accountService.findAll();
+	   return eventService.findAll();
    }
    
    @GetMapping("/{id}")
-   public ResponseEntity<Account> getAccountById(@PathVariable Long id)
+   public ResponseEntity<Event> getEventById(@PathVariable Long id)
    {
-	   Account account=accountService.findById(id);
-	   return new ResponseEntity<Account>(account,HttpStatus.OK);
+	   Event event=eventService.findById(id);
+	   return new ResponseEntity<Event>(event,HttpStatus.OK);
    }
    
    @DeleteMapping("/delete/{id}")
-   public ResponseEntity<String> deleteAccount(@PathVariable Long id)
+   public ResponseEntity<String> deleteEvent(@PathVariable Long id)
    {
-	   accountService.delete(id);
-	   return new ResponseEntity<String>("account was deleted",HttpStatus.OK);
+	   eventService.delete(id);
+	   return new ResponseEntity<String>("event was deleted",HttpStatus.OK);
    }
 }

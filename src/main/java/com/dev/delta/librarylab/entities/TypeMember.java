@@ -1,9 +1,12 @@
 package com.dev.delta.librarylab.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="librarylab_type_member")
 public class TypeMember {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;

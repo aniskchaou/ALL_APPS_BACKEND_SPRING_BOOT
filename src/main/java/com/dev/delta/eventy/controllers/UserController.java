@@ -20,50 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dev.delta.accountt.entities.Account;
 import com.dev.delta.accountt.services.AccountService;
-@RestController
-@RequestMapping("/user")
-@CrossOrigin
+
 public class UserController {
-	@Autowired
-	AccountService accountService;
 	
-	
-	@PostMapping("/create")
-	 public ResponseEntity<?> addPTToBoard(@Validated @RequestBody Account projectAccount, BindingResult result){
-
-	    if(result.hasErrors()){
-	            Map<String, String> errorMap = new HashMap<String,String>();
-
-	            for(FieldError error: result.getFieldErrors()){
-	                errorMap.put(error.getField(), error.getDefaultMessage());
-	            }
-	            return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
-	        }
-          
-	        Account newPT = accountService.saveOrUpdate(projectAccount);
-
-	        return new ResponseEntity<Account>(newPT, HttpStatus.CREATED);
-	    }
-	
-	
-	
-   @GetMapping("/all")
-   public Iterable<Account> getAllAccounts()
-   {
-	   return accountService.findAll();
-   }
-   
-   @GetMapping("/{id}")
-   public ResponseEntity<Account> getAccountById(@PathVariable Long id)
-   {
-	   Account account=accountService.findById(id);
-	   return new ResponseEntity<Account>(account,HttpStatus.OK);
-   }
-   
-   @DeleteMapping("/delete/{id}")
-   public ResponseEntity<String> deleteAccount(@PathVariable Long id)
-   {
-	   accountService.delete(id);
-	   return new ResponseEntity<String>("account was deleted",HttpStatus.OK);
-   }
 }

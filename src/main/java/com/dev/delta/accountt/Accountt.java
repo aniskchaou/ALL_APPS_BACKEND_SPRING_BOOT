@@ -3,7 +3,7 @@ package com.dev.delta.accountt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.accountt.dao.ProductRepository;
+import com.dev.delta.accountt.dao.ProductAccountRepository;
 import com.dev.delta.accountt.entities.Account;
 import com.dev.delta.accountt.entities.Client;
 import com.dev.delta.accountt.entities.Product;

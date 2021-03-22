@@ -1,9 +1,12 @@
 package com.dev.delta.fastbus.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="fastbus_vehicule")
 public class Vehicule {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;

@@ -3,32 +3,32 @@ package com.dev.delta.eventy.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.eventy.dao.UserRepository;
-import com.dev.delta.eventy.entities.User;
+import com.dev.delta.eventy.dao.UserEventRepository;
+import com.dev.delta.eventy.entities.UserEvent;
 @Service
 public class UserService {
 	@Autowired
-	UserRepository  userRepository;
+	UserEventRepository  userRepository;
 	
-	public User saveOrUpdate(User user)
+	public UserEvent saveOrUpdate(UserEvent user)
 	{
 		
 		return userRepository.save(user);
 	}
 	
-	public Iterable<User> findAll()
+	public Iterable<UserEvent> findAll()
 	{
 		return userRepository.findAll();
 	}
 	
-	public User findById(Long id)
+	public UserEvent findById(Long id)
 	{
 		return userRepository.getOne(id);
 	}
 	
 	public void delete(Long id)
 	{
-		User user=findById(id);
+		UserEvent user=findById(id);
 		userRepository.delete(user);
 	}
 }

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="patient")
+@Table(name="dentic_patient")
 public class Patient {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;

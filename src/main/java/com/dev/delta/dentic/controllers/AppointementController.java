@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.delta.dentic.entities.Appointement;
 import com.dev.delta.dentic.services.AppointementService;
 @RestController
-@RequestMapping("/appointement")
+@RequestMapping("/dentic/appointement")
 @CrossOrigin
 public class AppointementController {
 	@Autowired

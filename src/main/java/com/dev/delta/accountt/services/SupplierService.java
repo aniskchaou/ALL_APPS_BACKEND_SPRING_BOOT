@@ -3,14 +3,14 @@ package com.dev.delta.accountt.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.accountt.dao.SupplierRepository;
+import com.dev.delta.accountt.dao.SupplierAccounttRepository;
 import com.dev.delta.accountt.entities.Supplier;
 
 
 @Service
 public class SupplierService {
 	@Autowired
-	SupplierRepository  supplierRepository;
+	SupplierAccounttRepository  supplierRepository;
 	
 	public Supplier saveOrUpdate(Supplier supplier)
 	{

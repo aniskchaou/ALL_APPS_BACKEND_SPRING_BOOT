@@ -1,16 +1,19 @@
 package com.dev.delta.gym.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="gym_type_sub")
 public class TypeSub {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
 	String  member;
 	String    category;
 	String     period;
-	String     limit;
+	String     timeLimit;
 	String     amount;
 	String    description;
 	String    fee;
@@ -26,7 +29,7 @@ public class TypeSub {
 		this.member = member;
 		this.category = category;
 		this.period = period;
-		this.limit = limit;
+		this.timeLimit = limit;
 		this.amount = amount;
 		this.description = description;
 		this.fee = fee;
@@ -66,11 +69,11 @@ public class TypeSub {
 	}
 
 	public String getLimit() {
-		return limit;
+		return timeLimit;
 	}
 
 	public void setLimit(String limit) {
-		this.limit = limit;
+		this.timeLimit = limit;
 	}
 
 	public String getAmount() {

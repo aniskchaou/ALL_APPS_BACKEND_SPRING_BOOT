@@ -23,7 +23,7 @@ import com.dev.delta.dentic.services.MedicamentService;
 
 
 @RestController
-@RequestMapping("/medicament")
+@RequestMapping("/dentic/medicament")
 @CrossOrigin
 public class MedicamentController {
 	@Autowired

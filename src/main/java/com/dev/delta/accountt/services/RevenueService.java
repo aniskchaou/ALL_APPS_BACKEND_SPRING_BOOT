@@ -3,14 +3,14 @@ package com.dev.delta.accountt.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.accountt.dao.RevenueRepository;
+import com.dev.delta.accountt.dao.RevenueAccounttRepository;
 import com.dev.delta.accountt.entities.Revenue;
 
 
 @Service
 public class RevenueService {
 	@Autowired
-	RevenueRepository  revenueRepository;
+	RevenueAccounttRepository  revenueRepository;
 	
 	public Revenue saveOrUpdate(Revenue revenue)
 	{

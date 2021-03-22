@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.delta.accountt.entities.Account;
 import com.dev.delta.accountt.services.AccountService;
 @RestController
-@RequestMapping("/account")
+@RequestMapping("/accountt/account")
 @CrossOrigin
 public class AccountController {
 	@Autowired

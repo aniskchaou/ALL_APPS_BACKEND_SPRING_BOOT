@@ -22,7 +22,7 @@ import com.dev.delta.dentic.entities.Patient;
 import com.dev.delta.dentic.services.PatientService;
 
 @RestController
-@RequestMapping("/patient")
+@RequestMapping("/dentic/patient")
 @CrossOrigin
 public class PatientController {
 	@Autowired

@@ -3,14 +3,14 @@ package com.dev.delta.dentic.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.dentic.dao.MedicamentRepository;
+import com.dev.delta.dentic.dao.MedicamentDenticRepository;
 import com.dev.delta.dentic.entities.Medicament;
 
 
 @Service
 public class MedicamentService {
 	@Autowired
-	MedicamentRepository  medicamentRepository;
+	MedicamentDenticRepository  medicamentRepository;
 	
 	public Medicament saveOrUpdate(Medicament medicament)
 	{

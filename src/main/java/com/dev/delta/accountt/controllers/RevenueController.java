@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.delta.accountt.entities.Revenue;
 import com.dev.delta.accountt.services.RevenueService;
 @RestController
-@RequestMapping("/revenue")
+@RequestMapping("/accountt/revenue")
 @CrossOrigin
 public class RevenueController {
 	@Autowired

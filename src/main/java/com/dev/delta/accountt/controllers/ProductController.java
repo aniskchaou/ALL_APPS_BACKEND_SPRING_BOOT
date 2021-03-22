@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dev.delta.accountt.dao.ProductRepository;
+import com.dev.delta.accountt.dao.ProductAccountRepository;
 import com.dev.delta.accountt.entities.Product;
 import com.dev.delta.accountt.services.ProductService;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/accountt/product")
 @CrossOrigin
 public class ProductController {
 

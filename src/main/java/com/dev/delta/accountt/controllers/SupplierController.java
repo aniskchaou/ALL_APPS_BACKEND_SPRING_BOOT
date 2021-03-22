@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dev.delta.accountt.entities.Supplier;
 import com.dev.delta.accountt.services.SupplierService;
 @RestController
-@RequestMapping("/supplier")
+@RequestMapping("/accountt/supplier")
 @CrossOrigin
 public class SupplierController {
 	@Autowired

@@ -1,5 +1,11 @@
 package com.dev.delta.pharmalife.dao;
 
-public interface MedicamentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import com.dev.delta.fastbus.entities.Assign;
+import com.dev.delta.pharmalife.entities.MedicamentPharma;
+@RepositoryRestResource
+public interface MedicamentRepository extends JpaRepository<MedicamentPharma, Long>  {
 
 }

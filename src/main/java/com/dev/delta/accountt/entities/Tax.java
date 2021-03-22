@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="tax")
+@Table(name="accountt_tax")
 public class Tax {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;

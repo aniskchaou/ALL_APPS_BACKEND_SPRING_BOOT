@@ -1,5 +1,8 @@
 package com.dev.delta.fastbus.service;
 
-public class VehiculeService {
+import org.springframework.beans.factory.annotation.Autowired;
 
+
+public class VehiculeService {
+	
 }

@@ -3,9 +3,9 @@ package com.dev.delta.eventy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dev.delta.eventy.entities.Category;
+import com.dev.delta.eventy.entities.CategoryEvent;
 import com.dev.delta.eventy.entities.Event;
-import com.dev.delta.eventy.entities.User;
+import com.dev.delta.eventy.entities.UserEvent;
 import com.dev.delta.eventy.services.CategoryService;
 import com.dev.delta.eventy.services.EventService;
 import com.dev.delta.eventy.services.UserService;
@@ -25,17 +25,17 @@ public class Eventy {
 
 	public void initCategories()
 	{
-		categoryService.saveOrUpdate(new Category(null, null));
+		categoryService.saveOrUpdate(new CategoryEvent("", ""));
 	}
 	
 	public void initEvents()
 	{
-		eventService.saveOrUpdate(new Event(null, null, null, null));
+		eventService.saveOrUpdate(new Event("", "", "", ""));
 	}
 	
 	public void initUsers()
 	{
-		userService.saveOrUpdate(new User(null, null, null, null));
+		userService.saveOrUpdate(new UserEvent("", "", "", ""));
 	}
 	
 	public void populate()

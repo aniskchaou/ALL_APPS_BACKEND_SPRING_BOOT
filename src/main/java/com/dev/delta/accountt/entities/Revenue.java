@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="revenue")
+@Table(name="accountt_revenue")
 public class Revenue {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;

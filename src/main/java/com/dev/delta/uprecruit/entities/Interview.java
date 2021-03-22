@@ -1,9 +1,12 @@
 package com.dev.delta.uprecruit.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="uprecruit_interview")
 public class Interview {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;

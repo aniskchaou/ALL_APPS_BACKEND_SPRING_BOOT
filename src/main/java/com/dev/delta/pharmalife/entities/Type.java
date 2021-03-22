@@ -1,9 +1,12 @@
 package com.dev.delta.pharmalife.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.Table;
+@Entity
+@Table(name="pharmalife_type")
 public class Type {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
